@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230311 23:52:37.586" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon Tests" source="/home/paru/Documentos/Code/robot_framework/amazon_tests.robot">
+<test id="s1-t1" name="Caso de teste 01 - Acesso ao menu eletronicos" line="8">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230311 23:52:37.689" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230311 23:52:37.689" endtime="20230311 23:52:38.511"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230311 23:52:38.511" endtime="20230311 23:52:38.619"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:37.689" endtime="20230311 23:52:38.619"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230311 23:52:38.622" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20230311 23:52:38.621" endtime="20230311 23:52:44.547"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230311 23:52:44.547" endtime="20230311 23:52:44.635"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${MENU_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230311 23:52:44.636" endtime="20230311 23:52:44.651"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:38.620" endtime="20230311 23:52:44.651"/>
+</kw>
+<kw name="Entrar no menu &quot;Eletrônicos&quot;" library="amazon_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${MENU_ELETRONICOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230311 23:52:44.652" level="INFO">Clicking element '//a[contains(@href,'electronics')]'.</msg>
+<status status="PASS" starttime="20230311 23:52:44.652" endtime="20230311 23:52:45.422"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:44.652" endtime="20230311 23:52:45.422"/>
+</kw>
+<kw name="Verificar se aparece a frase &quot;Eletrônicos e Tecnologia&quot;" library="amazon_resources" sourcename="Verificar se aparece a frase &quot;${FRASE}&quot;">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${FRASE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230311 23:52:45.423" endtime="20230311 23:52:45.662"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${TITULO_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230311 23:52:45.662" endtime="20230311 23:52:45.909"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:45.423" endtime="20230311 23:52:45.909"/>
+</kw>
+<kw name="Verificar se o título da página fica &quot;Eletrônicos e Tecnologia | Amazon.com.br&quot;" library="amazon_resources" sourcename="Verificar se o título da página fica &quot;${TITULO}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>title=${TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230311 23:52:45.915" level="INFO">Page title is 'Eletrônicos e Tecnologia | Amazon.com.br'.</msg>
+<status status="PASS" starttime="20230311 23:52:45.910" endtime="20230311 23:52:45.915"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:45.910" endtime="20230311 23:52:45.915"/>
+</kw>
+<kw name="Verificar se aparece a categoria &quot;Computadores e Informática&quot;" library="amazon_resources" sourcename="Verificar se aparece a categoria &quot;${NOME_CATEGORIA}&quot;">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${NOME_CATEGORIA}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230311 23:52:45.916" endtime="20230311 23:52:45.932"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>locator=//img[contains(@alt,'Computadores e Informática')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230311 23:52:45.947" level="INFO">Element '//img[contains(@alt,'Computadores e Informática')]' is displayed.</msg>
+<status status="PASS" starttime="20230311 23:52:45.933" endtime="20230311 23:52:45.947"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:45.915" endtime="20230311 23:52:45.947"/>
+</kw>
+<kw name="Fechar o navegador" library="amazon_resources" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230311 23:52:45.948" endtime="20230311 23:52:46.010"/>
+</kw>
+<status status="PASS" starttime="20230311 23:52:45.947" endtime="20230311 23:52:46.010"/>
+</kw>
+<doc>Verifica site</doc>
+<tag>categoria</tag>
+<tag>meus</tag>
+<status status="PASS" starttime="20230311 23:52:37.688" endtime="20230311 23:52:46.010"/>
+</test>
+<doc>Esta suite teste o site Amazon</doc>
+<status status="PASS" starttime="20230311 23:52:37.586" endtime="20230311 23:52:46.011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">categoria</stat>
+<stat pass="1" fail="0" skip="0">meus</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Amazon Tests">Amazon Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
