@@ -3,6 +3,10 @@
 
 ## O tem aqui:
 
+- ✅ Projetos do curso de Robot básico
+- ✅ Projetos do curso de Robot Avançado
+
+Outros arquivos e auxiliares:
 - ✅ WEB testing
 - ✅ API REST testing
 - ✅ API SOAP testing
